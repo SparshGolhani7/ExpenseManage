@@ -1,0 +1,176 @@
+/* 
+// ===============================================
+//
+// Shared resets
+//
+// ===============================================
+
+// A. More sensible default box sizing.
+//    Resource: css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+
+// 1. This sets 1rem = 10px.
+//    Resource: http://snook.ca/archives/html_and_css/font-size-with-rem */
+
+/* stylelint-disable selector-no-vendor-prefix */
+html {
+    min-height: 100vh;
+    height: auto;
+    overflow: auto;
+    box-sizing: border-box; /* [A] */
+    text-size-adjust: 100%;
+    font-size: 62.5%; /* [1] */
+}
+
+body {
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    min-height: 100%;
+    background-color: #fff;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit; /* [A] */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.content h1 {
+  font-size: 3.6rem;
+  font-weight: 700;
+}
+
+.content p {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.selected{
+  background-color: aquamarine;
+}
+
+/* Global Styles */
+.transaction-list {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.transaction-group {
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-group h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.has-transactions {
+  border-left: 4px solid #007bff;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-item .logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.transaction-item .title {
+  font-size: 16px;
+  color: #333;
+}
+
+.transaction-item .amount {
+  margin-left: auto;
+  font-weight: bold;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-button:disabled {
+  background-color: #b0d4ff;
+  cursor: not-allowed;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.pagination-info {
+  margin: 0 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.toolbar button {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 1px solid #000;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.toolbar button.selected {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.toolbar button:hover {
+  background-color: #0056b3;
+  color: white;
+}
